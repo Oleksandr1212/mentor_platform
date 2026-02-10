@@ -1,9 +1,6 @@
-/**
- * messageStore.js
- * Сервіс для управління повідомленнями чату за допомогою бекенду PostgreSQL.
- */
+import API_URL from './config';
 
-const API_BASE = '/api/chat';
+const API_BASE = `${API_URL}/api/chat`;
 
 export const messageStore = {
     getChats: async (token) => {
