@@ -1,0 +1,116 @@
+/* Базові стилі кнопок */
+.ui-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: inherit;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.ui-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Розміри */
+.ui-btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.ui-btn-medium {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+}
+
+.ui-btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* Варіанти */
+
+/* Основний */
+.ui-btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.ui-btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Другорядний */
+.ui-btn-secondary {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.ui-btn-secondary:hover:not(:disabled) {
+    background: var(--border);
+    transform: translateY(-2px);
+}
+
+/* Контур */
+.ui-btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+.ui-btn-outline:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+/* Світіння (спеціально для LP) */
+.ui-btn-glow {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+}
+
+.ui-btn-glow:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.6);
+}
+
+/* Привид */
+.ui-btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+}
+
+.ui-btn-ghost:hover:not(:disabled) {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Скло (Накладення) */
+.ui-btn-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.ui-btn-glass:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Утиліти */
+.ui-btn-full-width {
+    width: 100%;
+}

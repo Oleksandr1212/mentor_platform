@@ -1,0 +1,45 @@
+.ui-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--surface-hover);
+    flex-shrink: 0;
+}
+
+.ui-avatar-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Розміри */
+.ui-avatar-small {
+    width: 32px;
+    height: 32px;
+}
+
+.ui-avatar-medium {
+    width: 40px;
+    height: 40px;
+}
+
+.ui-avatar-large {
+    width: 50px;
+    height: 50px;
+}
+
+.ui-avatar-xlarge {
+    width: 80px;
+    height: 80px;
+}
+
+
+/* Рамки */
+.border-default {
+    border: 2px solid var(--surface);
+}
+
+.border-primary {
+    border: 2px solid var(--primary);
+}

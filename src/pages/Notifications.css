@@ -1,0 +1,252 @@
+.notifications-page {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+}
+
+.notifications-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.filter-card {
+    padding: 1.5rem;
+    position: sticky;
+    top: calc(var(--navbar-height) + 1rem);
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-muted);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+}
+
+.filter-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.filter-item.active {
+    background: var(--primary);
+    color: white;
+}
+
+.filter-item .count {
+    margin-left: auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Список сповіщень */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.notif-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+.notif-card.unread {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.notif-card.unread::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+}
+
+.notif-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notif-icon.session {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--primary);
+}
+
+.notif-icon.message {
+    background: rgba(236, 72, 153, 0.15);
+    color: var(--secondary);
+}
+
+.notif-icon.system {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.notif-content {
+    flex: 1;
+}
+
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.notif-header h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.notif-header .time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.notif-msg {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.notif-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s;
+}
+
+.notif-card:hover .delete-btn {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.empty-notif {
+    padding: 5rem 2rem;
+}
+
+.empty-icon {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
+.empty-notif h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.empty-notif p {
+    color: var(--text-secondary);
+}
+
+/* Адаптивність */
+@media (max-width: 900px) {
+    .notifications-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-sidebar {
+        display: none;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .notif-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .notif-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .notif-header h4 {
+        font-size: 1rem;
+    }
+}

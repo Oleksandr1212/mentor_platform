@@ -1,0 +1,327 @@
+.about-page {
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 6rem;
+}
+
+/* Фонові плями */
+.about-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob-about-1 {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    animation: float-blob 20s infinite alternate;
+}
+
+.blob-about-2 {
+    position: absolute;
+    bottom: 10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+    animation: float-blob 25s infinite alternate-reverse;
+}
+
+@keyframes float-blob {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(5%, 5%) scale(1.1);
+    }
+}
+
+.about-hero {
+    padding: 6rem 0 4rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-hero .hero-subtitle {
+    max-width: 700px;
+    margin-top: 1.5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+/* Секція місії */
+.about-mission {
+    margin-bottom: 6rem;
+}
+
+.mission-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    padding: 4rem !important;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)) !important;
+}
+
+.mission-tag {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.mission-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.mission-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.mission-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    opacity: 0.2;
+}
+
+.mission-icon {
+    filter: drop-shadow(0 0 20px var(--primary));
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+}
+
+/* Секція цінностей */
+.about-values {
+    margin-bottom: 8rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    padding: 2.5rem !important;
+    transition: transform 0.3s ease;
+    text-align: left;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Секція статистики */
+.about-stats-strip {
+    margin-bottom: 8rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+    border-radius: 24px;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.stat-block {
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, var(--text-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-lab {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Секція команди */
+.about-team {
+    margin-bottom: 8rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.team-avatar-wrapper {
+    position: relative;
+    padding: 10px;
+}
+
+.team-avatar-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    border-style: dashed;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.team-role-tag {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* Секція історії */
+.about-story {
+    margin-bottom: 4rem;
+}
+
+.story-box {
+    padding: 4rem;
+    border-radius: 30px;
+    background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent);
+}
+
+.story-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .mission-card {
+        grid-template-columns: 1fr;
+        padding: 3rem !important;
+        text-align: center;
+    }
+
+    .mission-tag {
+        justify-content: center;
+    }
+
+    .mission-visual {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .story-box {
+        padding: 2.5rem;
+    }
+
+    .mission-content h3 {
+        font-size: 2rem;
+    }
+}

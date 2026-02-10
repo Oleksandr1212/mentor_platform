@@ -1,0 +1,43 @@
+.ui-card {
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Варіанти */
+.ui-card-default {
+    background: var(--surface);
+}
+
+.ui-card-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.ui-card-hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Відступи */
+.padding-none {
+    padding: 0;
+}
+
+.padding-small {
+    padding: 1rem;
+}
+
+.padding-medium {
+    padding: 1.5rem;
+}
+
+.padding-large {
+    padding: 2.5rem;
+}
